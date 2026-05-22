@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de Computadoras</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: #252526;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        nav {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #3c3c3c;
+        }
+        nav h2 {
+            margin-top: 0;
+            color: #ffffff;
+            border-bottom: 1px solid #3c3c3c;
+            padding-bottom: 8px;
+        }
+        .unidad-seccion {
+            margin-top: 40px;
+            border-left: 3px solid #007acc;
+            padding-left: 15px;
+        }
+        .unidad-titulo {
+            color: #569cd6;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        h3 {
+            color: #4fc1ff;
+            margin-top: 25px;
+            border-bottom: 1px solid #3c3c3c;
+            padding-bottom: 5px;
+        }
+        h4 {
+            color: #9cdcfe;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        h5 {
+            color: #ce9178;
+            font-size: 1.1em;
+            margin: 10px 0 5px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+            position: relative;
+        }
+        .indice-lista a {
+            text-decoration: none;
+            color: #9cdcfe;
+        }
+        .indice-lista a:hover {
+            text-decoration: underline;
+            color: #4fc1ff;
+        }
+        .vineta-guion::before {
+            content: "—";
+            color: #ce9178;
+            position: absolute;
+            left: -15px;
+        }
+        .numero {
+            color: #4fc1ff;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .texto-tema {
+            color: #9cdcfe;
+        }
+        .texto-detalle {
+            color: #d4d4d4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2d2d2d;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #3c3c3c;
+            text-align: left;
+        }
+        th {
+            background-color: #007acc;
+            color: white;
+        }
+        .meta-practica {
+            background-color: #2d2d2d;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 3px solid #ce9178;
+        }
+        .meta-practica p {
+            margin: 4px 0;
+        }
+        .grid-componentes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card-item {
+            background-color: #2d2d2d;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #3c3c3c;
+        }
+        .img-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            border: 1px solid #3c3c3c;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Arquitectura de Computadoras</h1>
+
+    <nav>
+        <h2>Índice General</h2>
+        <ul class="indice-lista">
+            <li><a href="#unidad1"><span class="numero">1.</span> Unidad 1: Arquitecturas de Cómputo</a></li>
+            <li><a href="#unidad2"><span class="numero">2.</span> Unidad 2: Estructura y Funcionamiento del Procesador</a></li>
+            <li><a href="#unidad3"><span class="numero">3.</span> Unidad 3: Selección de Componentes Para Ensamble</a></li>
+            <li><a href="#unidad4"><span class="numero">4.</span> Unidad 4: Procesamiento Paralelo</a></li>
+            <li>
+                <a href="#seccion-practicas"><span class="numero">5.</span> Prácticas de Laboratorio</a>
+                <ul>
+                    <li><a href="#practica1">🔹 Práctica 1: Reconocimiento de Componentes de Hardware</a></li>
+                    <li><a href="#practica2">🔹 Práctica 2: Identificación y Análisis de Procesadores</a></li>
+                    <li><a href="#practica3">🔹 Práctica 3: Caracterización de Módulos de Memoria RAM</a></li>
+                    <li><a href="#practica4">🔹 Práctica 4: Unidades de Almacenamiento Masivo y Lógico</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="unidad1" class="unidad-seccion">
+        <div class="unidad-titulo">Unidad 1: Arquitecturas de Cómputo</div>
+        <ul>
+            <li>
+                <span class="numero">1.1</span> <span class="texto-tema">Modelos de Arquitecturas de cómputo</span>
+                <ul>
+                    <li class="vineta-guion"><span class="texto-detalle">Clásicas</span></li>
+                    <li class="vineta-guion"><span class="texto-detalle">Segmentadas</span></li>
+                    <li class="vineta-guion"><span class="texto-detalle">Multiprocesamiento</span></li>
+                </ul>
+            </li>
+            <li>
+                <span class="numero">1.2</span> <span class="texto-tema">Análisis de los Componentes</span>
+                <ul>
+                    <li><span class="numero">1.2.1</span> <span class="texto-tema">Arquitecturas</span></li>
+                    <li>
+                        <span class="numero">1.2.2</span> <span class="texto-tema">Unidad Central de Procesamiento (CPU)</span>
+                        <ul>
+                            <li class="vineta-guion"><span class="texto-detalle">Unidad Aritmética Lógica (ALU)</span></li>
+                            <li class="vineta-guion"><span class="texto-detalle">Unidad de Control (UC)</span></li>
+                            <li class="vineta-guion"><span class="texto-detalle">Registros</span></li>
+                            <li class="vineta-guion"><span class="texto-detalle">Bases</span></li>
+                            <li class="vineta-guion"><span class="texto-detalle">Memoria</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><span class="numero">1.3</span> <span class="texto-tema">Memoria Principal (Caché)</span></li>
+            <li><span class="numero">1.4</span> <span class="texto-tema">Módulos Entrada - Salida (Programada / Instrucción)</span></li>
+            <li><span class="numero">1.5</span> <span class="texto-tema">Acceso Diccionario</span></li>
+            <li><span class="numero">1.6</span> <span class="texto-tema">Buces (Tipos, Estructura, Jerarquía)</span></li>
+            <li><span class="numero">1.7</span> <span class="texto-tema">Introducción</span></li>
+        </ul>
+    </div>
+
+    <div id="unidad2" class="unidad-seccion">
+        <div class="unidad-titulo">Unidad 2: Estructura y Funcionamiento del Procesador</div>
+        <ul>
+            <li><span class="numero">2.1</span> <span class="texto-tema">Organización del Procesador</span></li>
+            <li>
+                <span class="numero">2.2</span> <span class="texto-tema">Estructura de registros</span>
+                <ul>
+                    <li class="vineta-guion"><span class="texto-detalle">Registros visibles a usuario</span></li>
+                    <li class="vineta-guion"><span class="texto-detalle">Control y Estado</span></li>
+                </ul>
+            </li>
+            <li>
+                <span class="numero">2.3</span> <span class="texto-tema">Ciclo de la Instrucción</span>
+                <ul>
+                    <li><span class="numero">2.3.1</span> <span class="texto-tema">Ciclo Fetch - Decode - Execute</span></li>
+                    <li><span class="numero">2.3.2</span> <span class="texto-tema">Segmentación</span></li>
+                    <li><span class="numero">2.3.3</span> <span class="texto-tema">Conjunto de Instrucciones</span></li>
+                </ul>
+            </li>
+            <li><span class="numero">2.4</span> <span class="texto-tema">Modos de direccionamiento</span></li>
+            <li><span class="numero">2.5</span> <span class="texto-tema">Casos de estudio</span></li>
+        </ul>
+    </div>
+
+    <div id="unidad3" class="unidad-seccion">
+        <div class="unidad-titulo">Unidad 3: Selección de Componentes Para Ensamble</div>
+        <ul>
+            <li><span class="numero">3.1</span> <span class="texto-tema">Chip Set y sus componentes (CPU, Bus, E/S, Video, Temporización, Control)</span></li>
+            <li><span class="numero">3.2</span> <span class="texto-tema">Aplicaciones (Almacenamiento, Fuente de Alimentación, Prácticas)</span></li>
+            <li><span class="numero">3.3</span> <span class="texto-tema">Ambientes de Servicio (Negocios, Industria, Comercio Electrónico)</span></li>
+        </ul>
+    </div>
+
+    <div id="unidad4" class="unidad-seccion">
+        <div class="unidad-titulo">Unidad 4: Procesamiento Paralelo</div>
+        <ul>
+            <li><span class="numero">4.1</span> <span class="texto-tema">Procesos Básicos de la Computación Paralela</span></li>
+            <li><span class="numero">4.2</span> <span class="texto-tema">Computación Paralela (Clasificación, Secuenciales, Direcciones de memoria)</span></li>
+            <li><span class="numero">4.3</span> <span class="texto-tema">Sistemas de memoria (compartida) Multiprocesadores</span></li>
+            <li><span class="numero">4.4</span> <span class="texto-tema">Sistemas de memoria distribuida Multicomputadoras</span></li>
+            <li><span class="numero">4.5</span> <span class="texto-tema">Casos de estudio</span></li>
+        </ul>
+    </div>
+
+
+    <div id="seccion-practicas" class="unidad-seccion">
+        <div class="unidad-titulo" style="color: #ce9178; border-bottom: 1px solid #3c3c3c; padding-bottom: 5px;">Sección: Prácticas de Laboratorio</div>
+        
+        <article id="practica1" style="margin-top: 20px; border-bottom: 1px dashed #3c3c3c; padding-bottom: 30px;">
+            <h3>Práctica 1: Reconocimiento de Componentes de Hardware</h3>
+            <div class="meta-practica">
+                <p><strong>Alumno:</strong> Rafael Martínez Hernández</p>
+                <p><strong>Equipo:</strong> 1 | <strong>Horario:</strong> 6:00 – 7:00</p>
+            </div>
+            <p>Análisis de la arquitectura física y componentes integrados en las tarjetas madres de los equipos de cómputo del laboratorio.</p>
+            <div class="img-container">
+                <img src="imagenes/Placa Practica1.jpg" alt="Placa Base Intel">
+                <p style="font-size: 0.85em; color: #858585; margin-top: 5px;"><em>Figura: Tarjeta madre principal analizada en el equipo.</em></p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Componente / Parámetro</th>
+                        <th>Especificación Técnica Detectada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="font-weight: bold;">Fabricante y Modelo</td><td>Intel Corporation (D865GLC / D865PESO)</td></tr>
+                    <tr><td style="font-weight: bold;">Chipset</td><td>Intel 865G (Northbridge) / Intel ICH5 (Southbridge)</td></tr>
+                    <tr><td style="font-weight: bold;">Socket de CPU</td><td>Socket 478 (Pentium 4 / Celeron)</td></tr>
+                    <tr><td style="font-weight: bold;">Memoria RAM</td><td>DDR SDRAM (DDR1) | 4 ranuras DIMM | Soporta Dual Channel</td></tr>
+                    <tr><td style="font-weight: bold;">Ranuras de Expansión</td><td>1 ranura AGP 8X/4X y 3 ranuras PCI</td></tr>
+                    <tr><td style="font-weight: bold;">Almacenamiento</td><td>2 canales IDE (Ultra ATA) y 2 puertos SATA de 1ª Generación</td></tr>
+                </tbody>
+            </table>
+            <h4>Comparativa de Arquitecturas (Equipos del Grupo)</h4>
+            <table>
+                <thead>
+                    <tr style="background-color: #1a4d80;">
+                        <th>Placa / Fabricante</th>
+                        <th>Socket y Procesador</th>
+                        <th>Tipo de Memoria</th>
+                        <th>Almacenamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Mercury</strong> (Chipset VIA)</td><td>Socket 462 / AMD Athlon XP</td><td>DDR1 (2 DIMM)</td><td>2 puertos IDE (PATA)</td></tr>
+                    <tr><td><strong>MSI GF615M-P31</strong></td><td>Socket AM3 / AMD Phenom II</td><td>DDR3 (2 DIMM)</td><td>Conectores SATA e IDE</td></tr>
+                    <tr><td><strong>Intel D525MW</strong></td><td>Intel Atom D525 (Integrado)</td><td>DDR3 SO-DIMM</td><td>2 puertos SATA</td></tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article id="practica2" style="margin-top: 30px; border-bottom: 1px dashed #3c3c3c; padding-bottom: 30px;">
+            <h3>Práctica 2: Identificación y Análisis de Procesadores</h3>
+            <div class="meta-practica">
+                <p><strong>Alumno:</strong> Rafael Martínez Hernández</p>
+                <p><strong>Equipo:</strong> 1</p>
+            </div>
+            <p>Inspección física y documental de diferentes microprocesadores para estudiar la evolución de núcleos, frecuencias, sockets y segmentos de mercado.</p>
+
+            <h4>Tabla Resumen de Especificaciones de CPUs</h4>
+            <table>
+                <thead>
+                    <tr style="background-color: #007acc;">
+                        <th>Procesador / Modelo</th>
+                        <th>Frecuencia (Velocidad)</th>
+                        <th>Caché L2</th>
+                        <th>Bus (FSB)</th>
+                        <th>Socket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Intel Pentium Dual Core E2140</strong></td><td>1.60 GHz</td><td>1 MB</td><td>800 MHz</td><td>LGA 775</td></tr>
+                    <tr><td><strong>Intel Pentium 4 531</strong></td><td>3.00 GHz</td><td>1 MB</td><td>800 MHz</td><td>LGA 775</td></tr>
+                    <tr><td><strong>AMD Sempron 3000+</strong></td><td>1.80 GHz</td><td>256 KB</td><td>N/A</td><td>Socket 754</td></tr>
+                    <tr><td><strong>Intel Xeon (Lote: 4637A274)</strong></td><td>Servidor Profesional</td><td>Alta Densidad</td><td>Bus Especial</td><td>LGA Especial</td></tr>
+                    <tr><td><strong>Intel Celeron D 336</strong></td><td>2.80 GHz</td><td>256 KB</td><td>533 MHz</td><td>LGA 775</td></tr>
+                    <tr><td><strong>Intel Celeron 1100A (SL6RM)</strong></td><td>1.10 GHz</td><td>256 KB</td><td>100 MHz</td><td>Socket 370</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Detalles de la Arquitectura de cada CPU</h4>
+            <div class="grid-componentes">
+                <div class="card-item">
+                    <h5>Intel Pentium Dual Core E2140</h5>
+                    <div class="img-container"><img src="imagenes/practi2imagen1.jpg" alt="Intel Pentium E2140"></div>
+                    <p>Procesador con arquitectura de doble núcleo, lanzado en la transición hacia la era Core 2 Duo. Ofrece mejoras de multitarea eficientes.</p>
+                </div>
+                <div class="card-item">
+                    <h5>Intel Pentium 4 531</h5>
+                    <div class="img-container"><img src="imagenes/practi2imagen2.jpg" alt="Intel Pentium 4 531"></div>
+                    <p>Un modelo clásico de un solo núcleo fundamentado en la arquitectura NetBurst de Intel con alta frecuencia base (3.00 GHz).</p>
+                </div>
+                <div class="card-item">
+                    <h5>AMD Sempron 3000+</h5>
+                    <div class="img-container"><img src="imagenes/practi2imagen3.jpg" alt="AMD Sempron 3000+"></div>
+                    <p>Procesador de entrada de AMD diseñado como opción económica utilizando empaque físico de pines Socket 754.</p>
+                </div>
+                <div class="card-item">
+                    <h5>Intel Xeon (Profesional)</h5>
+                    <div class="img-container"><img src="imagenes/practi2imagen4.jpg" alt="Intel Xeon"></div>
+                    <p>Unidad de procesamiento diseñada para servidores con alta tolerancia a fallos y compatibilidad con memorias ECC.</p>
+                </div>
+            </div>
+        </article>
+
+        <article id="practica3" style="margin-top: 30px; border-bottom: 1px dashed #3c3c3c; padding-bottom: 30px;">
+            <h3>Práctica 3: Caracterización de Módulos de Memoria RAM</h3>
+            <div class="meta-practica">
+                <p><strong>Alumno:</strong> Rafael Martínez Hernández</p>
+                <p><strong>Asignatura:</strong> Arquitectura de Computadoras</p>
+            </div>
+            <p>Análisis técnico detallado de módulos de memoria de alta velocidad DDR4 SDRAM recopilando parámetros críticos como latencia, voltaje, arquitectura de canales y encapsulado.</p>
+
+            <h4>Tabla Comparativa de Módulos RAM Analizados</h4>
+            <table>
+                <thead>
+                    <tr style="background-color: #007acc;">
+                        <th>Parámetro Técnico</th>
+                        <th>Módulo 1 (SK Hynix - Etiqueta "226")</th>
+                        <th>Módulo 2 (Samsung - Etiqueta "238")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="font-weight: bold;">Fabricante</td><td>SK Hynix</td><td>Samsung</td></tr>
+                    <tr><td style="font-weight: bold;">Modelo de Fábrica</td><td>HMA82GU6JJR8N-VK</td><td>M378A2K43CB1-CTD</td></tr>
+                    <tr><td style="font-weight: bold;">Capacidad</td><td>16 GB</td><td>16 GB</td></tr>
+                    <tr><td style="font-weight: bold;">Tipo de Memoria</td><td>DDR4 SDRAM</td><td>DDR4 SDRAM</td></tr>
+                    <tr><td style="font-weight: bold;">Velocidad Nativa</td><td>2666 MHz (PC4-2666V)</td><td>2666 MHz (PC4-2666V)</td></tr>
+                    <tr><td style="font-weight: bold;">Arquitectura de Organización</td><td>2Rx8 (Dual Rank)</td><td>2Rx8 (Dual Rank)</td></tr>
+                    <tr><td style="font-weight: bold;">Factor de Forma</td><td>UDIMM (288-pin para Escritorio)</td><td>UDIMM (288-pin para Escritorio)</td></tr>
+                    <tr><td style="font-weight: bold;">Voltaje de Operación</td><td>1.2V</td><td>1.2V</td></tr>
+                    <tr><td style="font-weight: bold;">Latencia CAS (CL)</td><td>CL19</td><td>CL19</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Inspección Visual de Memorias</h4>
+            <div class="grid-componentes">
+                <div class="card-item">
+                    <h5>Módulo SK Hynix</h5>
+                    <div class="img-container"><img src="imagenes/practi3imagen1.jpg" alt="Módulo SK Hynix DDR4"></div>
+                    <p>Módulo de doble rango (Dual Rank) optimizado para estaciones de trabajo con baja disipación térmica gracias a sus especificaciones de 1.2V.</p>
+                </div>
+                <div class="card-item">
+                    <h5>Módulo Samsung</h5>
+                    <div class="img-container"><img src="imagenes/practi3imagen2.jpg" alt="Módulo Samsung DDR4"></div>
+                    <p>Unidad UDIMM estándar de alta compatibilidad industrial, compartiendo idénticos tiempos de respuesta JEDEC que habilitan configuraciones dual-channel.</p>
+                </div>
+            </div>
+        </article>
+
+        <article id="practica4" style="margin-top: 30px;">
+            <h3>Práctica 4: Unidades de Almacenamiento Masivo y Lógico</h3>
+            <div class="meta-practica">
+                <p><strong>Alumno:</strong> Rafael Martínez Hernández</p>
+                <p><strong>Asignatura:</strong> Arquitectura de Computadoras</p>
+            </div>
+            <p>Estudio detallado de la infraestructura de almacenamiento secundario en la arquitectura del computador. Se analizaron tanto las propiedades mecánicas y de estado sólido como la configuración lógica del sistema de archivos.</p>
+
+            <h4>Clasificación por Tecnología de Almacenamiento</h4>
+            <div class="grid-componentes">
+                <div class="card-item">
+                    <h5>Unidad de Estado Sólido (SSD)</h5>
+                    <ul>
+                        <li><strong>Interfaces Comunes:</strong> SATA III (6 Gb/s) o M.2 NVMe (PCIe Gen3/Gen4).</li>
+                        <li><strong>Estructura Interna:</strong> Memorias Flash NAND no volátiles comandadas por un chip controlador lógico.</li>
+                        <li><strong>Ventajas:</strong> Altas tasas de transferencia de lectura/escritura y nula latencia por partes mecánicas.</li>
+                    </ul>
+                </div>
+                <div class="card-item">
+                    <h5>Disco Duro Mecánico (HDD)</h5>
+                    <ul>
+                        <li><strong>Interfaces Comunes:</strong> PATA/IDE tradicionales o SATA III modernos.</li>
+                        <li><strong>Estructura Interna:</strong> Platos magnéticos giratorios de alta velocidad, cabezales de lectura electromagnéticos y motores de precisión.</li>
+                        <li><strong>Ventajas:</strong> Relación costo-capacidad ideal para almacenamiento masivo en frío.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Estructura Lógica y Sistemas de Archivos</h4>
+            <p>Durante el laboratorio se revisó cómo el sistema operativo mapea las unidades físicas para la manipulación y protección de datos:</p>
+            <table>
+                <thead>
+                    <tr style="background-color: #1a4d80;">
+                        <th>Sistema de Archivos</th>
+                        <th>Tabla de Partición Asociada</th>
+                        <th>Características Principales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NTFS</strong> (Windows) / <strong>EXT4</strong> (Linux)</td>
+                        <td><strong>GPT</strong> (GUID Partition Table)</td>
+                        <td>Es el estándar actual. Soporta arreglos mayores a 2 TB, redundancia mediante bitácoras (Journaling) y arranques seguros administrados por firmware UEFI.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FAT32</strong> / <strong>exFAT</strong></td>
+                        <td><strong>MBR</strong> (Master Boot Record)</td>
+                        <td>Arquitectura heredada limitada a 4 particiones primarias en MBR y archivos no mayores a 4 GB en FAT32. Utilizado principalmente por su alta compatibilidad multiplataforma.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card-item" style="margin-top: 20px;">
+                <h5>Registro de Laboratorio y Gestión de Discos</h5>
+                <p>Se realizaron actividades de análisis lógico de almacenamiento a través del software de administración del sistema para la creación, formateo y asignación de letras de volumen a nuevas particiones.</p>
+                <div class="img-container" style="max-width: 450px; margin: 15px auto;">
+                    <img src="imagenes/practi4imagen1.jpg" alt="Administración de Almacenamiento de Laboratorio">
+                    <p style="font-size: 0.85em; color: #858585; margin-top: 5px;"><em>Figura 4.1: Interfaz de gestión y diagnóstico de unidades lógica/física.</em></p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+</div>
+
+</body>
+</html>
